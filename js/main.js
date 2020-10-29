@@ -16,21 +16,51 @@ $(document).ready(function () {
     //Generazione numeri random del PC
     while (archivio.length < size) {
 
-        var num = randomNumber(1, 50);
+        var num = randomNumber(1, 100);
             
         if (! archivio.includes(num)) {  
             archivio.push(num);
         }
         alert(num);
     }
-
+    
+    //Log di debug
     console.log(archivio);
+
 
     //Timing 30 secondi
     setTimeout(function () {
-        alert("Hello devs!");
-    }, 30000);
-    
+
+        //Referenze
+        var tries = ""; 
+        var numUser = [];
+
+        var numFound = archivio.includes(tries);
+        
+        for (var i = 0; i < 5; i++) {
+
+            var tries = parseInt( prompt("Inserisci i numeri che hai letto"));
+
+            while ( isNaN(tries) || numUser.includes(tries) ) {
+                var tries = parseInt( prompt("Inserisci i numeri che hai letto"));
+            }
+
+            if (! numUser.includes(tries)) {  
+                numUser.push(tries);
+            } 
+        }
+        //Log di debug
+        console.log(numUser);  
+
+        //Log di debug
+        console.log(numFound);  
+
+        
+
+        
+
+
+    }, 3000);
 });
 
 
@@ -39,6 +69,9 @@ $(document).ready(function () {
 function randomNumber(min, max) {
     return Math.floor( Math.random() * (max - min + 1) + min); //per includere il numero massimo
 }
+
+
+
 
 
 
