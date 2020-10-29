@@ -56,24 +56,27 @@ $(document).ready(function () {
                 diffNum.push(tries);  
             }
         }
+        
+        //Resoconto numeri in comune e non
+        document.getElementById("remember").innerHTML = "I numeri in comune sono: "+ sameNum + ". Hai ricordato " + sameNum.length + " numeri."
 
-        console.log("I numeri in comune sono:", sameNum);
-        console.log("I numeri non in comune sono:", diffNum);
+        document.getElementById("not-remember").innerHTML = "I numeri non in comune sono: " + diffNum + ". Non hai ricordato " + diffNum.length + " numeri."
 
         //Log di debug
         //console.log(numUser);  
         //console.log(sameNum);
         //console.log(diffNum);
-        
     }, 3000);
-});
 
+});
 
 
 //Funzione random numbers
 function randomNumber(min, max) {
     return Math.floor( Math.random() * (max - min + 1) + min); //per includere il numero massimo
 }
+
+
 
 
 
