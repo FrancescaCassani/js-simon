@@ -13,6 +13,7 @@ $(document).ready(function () {
     var archivio = [];
     var size = 5;
     
+    //Generazione numeri random del PC
     while (archivio.length < size) {
 
         var num = randomNumber(1, 50);
@@ -22,6 +23,14 @@ $(document).ready(function () {
         }
         alert(num);
     }
+
+    console.log(archivio);
+
+    //Timing 30 secondi
+    setTimeout(function () {
+        alert("Hello devs!");
+    }, 30000);
+    
 });
 
 
@@ -30,5 +39,7 @@ $(document).ready(function () {
 function randomNumber(min, max) {
     return Math.floor( Math.random() * (max - min + 1) + min); //per includere il numero massimo
 }
+
+
 
 
