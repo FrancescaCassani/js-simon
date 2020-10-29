@@ -34,32 +34,37 @@ $(document).ready(function () {
         //Referenze
         var tries = ""; 
         var numUser = [];
+        var sameNum = [];
+        var diffNum = [];
 
-        var numFound = archivio.includes(tries);
-        
+
         for (var i = 0; i < 5; i++) {
 
-            var tries = parseInt( prompt("Inserisci i numeri che hai letto"));
+            var tries = parseInt( prompt("Inserisci i numeri che hai letto").trim());
 
             while ( isNaN(tries) || numUser.includes(tries) ) {
-                var tries = parseInt( prompt("Inserisci i numeri che hai letto"));
+                var tries = parseInt( prompt("Inserisci i numeri che hai letto").trim());
             }
 
             if (! numUser.includes(tries)) {  
                 numUser.push(tries);
             } 
+
+            if (archivio.includes(tries)) {  
+                sameNum.push(tries);
+            } else {
+                diffNum.push(tries);  
+            }
         }
-        //Log di debug
-        console.log(numUser);  
+
+        console.log("I numeri in comune sono:", sameNum);
+        console.log("I numeri non in comune sono:", diffNum);
 
         //Log di debug
-        console.log(numFound);  
-
+        //console.log(numUser);  
+        //console.log(sameNum);
+        //console.log(diffNum);
         
-
-        
-
-
     }, 3000);
 });
 
