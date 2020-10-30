@@ -21,8 +21,9 @@ $(document).ready(function () {
         if (! archivio.includes(num)) {  
             archivio.push(num);
         }
-        alert(num);
     }
+
+    alert("I numeri che devi ricordare sono: " + archivio);
     
     //Log di debug
     console.log(archivio);
@@ -58,7 +59,7 @@ $(document).ready(function () {
         }
         
         //Resoconto numeri in comune e non
-        document.getElementById("remember").innerHTML = "I numeri in comune sono: "+ sameNum + ". Hai ricordato " + sameNum.length + " numeri."
+        document.getElementById("remember").innerHTML = "I numeri in comune sono: " + sameNum + ". Hai ricordato " + sameNum.length + " numeri."
 
         document.getElementById("not-remember").innerHTML = "I numeri non in comune sono: " + diffNum + ". Non hai ricordato " + diffNum.length + " numeri."
 
